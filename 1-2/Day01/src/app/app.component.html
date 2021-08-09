@@ -1,0 +1,52 @@
+<!-- Name Selector In navbar (ts) -->
+<app-navbar></app-navbar>
+
+{{title}}
+
+<!-- One Way Data Binding -->
+<!-- 1 -->
+<hr>
+value="{{Name}}"
+<input type="text" placeholder="Enter Your Name" value="{{Name}}">
+<!-- 2 -->
+<hr>
+[value]="Name"
+<input type="text" placeholder="Enter Your Name" [value]="Name" (change)="Print($event)">
+
+<!-- () Input Event For Functions (html => ts) -->
+<!-- [] Input Event For Values (html => ts) -->
+
+
+<!-- Two Way Data Binding -->
+<hr>
+[(ngModel)]
+<input type="text" placeholder="Enter Your Name" [(ngModel)]="Name">
+<hr>
+[ngModel]
+<!-- [] Output Event (html => html) -->
+<input type="text" placeholder="Enter Your Name" [ngModel]="Name" (change)="Print($event)">
+
+<hr>
+<label>Name : {{Name}}</label>
+
+<button (click) = "PrintName()">PrintName</button>
+<hr>
+
+
+
+<!-- Dana Example -->
+<br><br><br>
+<!-- With ngModelChange (Very Quickly) (Work With ngModel)-->
+<input type="text" [(ngModel)] = 'MyName' placeholder="Name" (ngModelChange)='PrintMyName($event)' >
+<!-- With Change -->
+<input type="text" [(ngModel)] = 'MyName' placeholder="Name" (change) = 'PrintMyNameChangeFun($event)' >
+<input type="email" [(ngModel)] = 'MyEmail' placeholder="Emil">
+<input type="number" [(ngModel)] = 'MySalary' placeholder="Salary">
+
+<button (click) = "PrintAllForm()">PrintAllForm</button>
+<hr>
+Name : {{MyName}} || Email : {{MyEmail}} || Anuual Salary : {{MySalary * 12}}
+
+<button (click) = 'Clear()'>Clear</button>
+<app-footer></app-footer>
+
