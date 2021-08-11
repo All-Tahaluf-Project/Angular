@@ -1,0 +1,22 @@
+<p>login works!</p>
+
+<div class="container">
+    <div class="loginCard">
+        <div class="example-container">
+        <mat-form-field>
+              <mat-label>Enter your email</mat-label>
+              <input matInput placeholder="pat@example.com" [formControl]="email">
+              <mat-error *ngIf="email.hasError('required') && email.hasError('email')">Please Enter Email.</mat-error>
+              <mat-error *ngIf="email.hasError('email')">Should be Email.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Enter your password</mat-label>
+            <input matInput placeholder="Password" [formControl]="password">
+            <mat-error *ngIf="password.hasError('required') && password.hasError('minLength')">Please Enter password.</mat-error>
+            <mat-error *ngIf="password.hasError('minLength')">Should be As Min 8 Character.</mat-error>
+      </mat-form-field>
+
+    </div>
+</div>
+  

@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   //Content All Component In That Model
@@ -13,11 +15,13 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     NavbarComponent,
     FooterComponent,
+    AboutusComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

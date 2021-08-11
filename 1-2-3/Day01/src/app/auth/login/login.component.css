@@ -1,0 +1,37 @@
+div.container{
+
+    background-color: powderblue;
+
+    width: 100vw;
+
+    height: 100vh;
+
+    overflow: hidden;
+
+    display: flex;
+
+    justify-content: center;
+
+}
+
+div.loginCard{
+
+    width: 700px;
+
+    height: 60vh;
+
+    padding: 20px;
+
+    background-color: white;
+
+    border-radius: 25px;
+
+
+
+}
+
+.example-container .mat-form-field + .mat-form-field {
+
+    margin-left: 8px;
+
+  }
