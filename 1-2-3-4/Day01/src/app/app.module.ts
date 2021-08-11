@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   //Content All Component In That Model
@@ -21,7 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
