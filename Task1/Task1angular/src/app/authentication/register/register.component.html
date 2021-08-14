@@ -1,0 +1,103 @@
+<div class="container register">
+    <div class="row">
+        <div class="col-md-3 register-left">
+            <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+            <h3>Welcome</h3>
+            <p>Online Delivery</p>
+            <input routerLink='../Login' type="submit" value="Login"/><br/>
+        </div>
+        <div class="col-md-9 register-right">
+            <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true">Register</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <h3 class="register-heading">Apply as a Customer</h3>
+                    <form method="post" [formGroup]='RegisterForm' (submit)='submit()' #MyForm="ngForm">
+                    <div class="row register-form">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <mat-form-field>
+                                    <mat-label>Enter your UserName</mat-label>
+                                    <input matInput placeholder="UserName" formControlName="UserName">
+                                    <mat-error *ngIf="RegisterForm.controls.UserName.hasError('required')">Please Enter UserName.</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field>
+                                    <mat-label>Enter your Email</mat-label>
+                                    <input matInput placeholder="Email" formControlName="Email">
+                                    <mat-error *ngIf="RegisterForm.controls.Email.hasError('required')">Please Enter Email.</mat-error>
+                                    <mat-error *ngIf="RegisterForm.controls.Email.hasError('email')">Shoud Be Email.</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field>
+                                    <mat-label>Enter your PhoneNumber</mat-label>
+                                    <input type="number" matInput placeholder="PhoneNumber" formControlName="PhoneNumber">
+                                    <mat-error *ngIf="RegisterForm.controls.PhoneNumber.hasError('required')">Please Enter PhoneNumber.</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div formGroupName = "Passwords">
+                                <div class="form-group required">
+                                    <mat-form-field>
+                                        <mat-label>Enter your Password</mat-label>
+                                        <input type="password" matInput placeholder="Password" formControlName="Password">
+                                        <mat-error *ngIf="RegisterForm.get('Passwords')?.get('Password')?.errors?.required">Please Enter Password.</mat-error>
+                                    </mat-form-field>
+                                </div>
+                
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <mat-form-field>
+                                        <mat-label>Enter your FirstName</mat-label>
+                                        <input matInput placeholder="FirstName" formControlName="FirstName">
+                                        <mat-error *ngIf="RegisterForm.controls.FirstName.hasError('required')">Please Enter FirstName.</mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field>
+                                    <mat-label>Enter your LastName</mat-label>
+                                    <input matInput placeholder="LastName" formControlName="LastName">
+                                    <mat-error *ngIf="RegisterForm.controls.LastName.hasError('required')">Please Enter LastName.</mat-error>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="form-group">
+                                <mat-form-field appearance="fill" >
+                                    <mat-label>Select</mat-label>
+                                    <mat-select formControlName="Gender">
+                                      <mat-option value='Male'>Male</mat-option>
+                                      <mat-option value='Female'>Female</mat-option>
+                                    </mat-select>
+                                    <mat-error *ngIf="RegisterForm.controls.Gender.hasError('required')">Please Enter Gender.</mat-error>
+                                  </mat-form-field>
+                        </div>
+                        <div class="form-group required" formGroupName = "Passwords">
+                            <mat-form-field>
+                                <mat-label>Enter your Confirm Password</mat-label>
+                                <input type="password" matInput placeholder="ConfirmPassword" formControlName="ConfirmPassword">
+                                <mat-error *ngIf="RegisterForm.get('Passwords')?.get('ConfirmPassword')?.errors?.passwordMismatch">Confirm Password does not match.</mat-error>
+                                <mat-error *ngIf="RegisterForm.get('Passwords')?.get('ConfirmPassword')?.errors?.required">Please Enter Confirm Password.</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <button mat-raised-button color="primary" [disabled]="MyForm.form.invalid">Register</button>
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>				                            
+
+
+<ngx-spinner bdColor = "rgba(0,138,255,0.49)" size = "large" color = "#0046ff" type = "ball-elastic-dots" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+

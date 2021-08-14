@@ -1,0 +1,50 @@
+
+<div class="container contact-form">
+    <div class="contact-image">
+        <img src="../../../assets/Image/Icons/diagnosis.png" alt="rocket_contact"/>
+    </div>
+    <form method="post" [formGroup]='ContactUsForm' (submit)='submit()' #MyForm="ngForm">
+        <h3>Contact Us</h3>
+       <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <mat-form-field>
+                        <mat-label>Enter your Name</mat-label>
+                        <input matInput placeholder="Name" formControlName="Name">
+                        <mat-error *ngIf="ContactUsForm.controls.Name.hasError('required')">Please Enter Name.</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field>
+                        <mat-label>Enter your Email</mat-label>
+                        <input matInput placeholder="Email" formControlName="Email">
+                        <mat-error *ngIf="ContactUsForm.controls.Email.hasError('required')">Please Enter Email.</mat-error>
+                        <mat-error *ngIf="ContactUsForm.controls.Email.hasError('email')">Shoud Be Email.</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field>
+                        <mat-label>Enter your PhoneNumber</mat-label>
+                        <input type="number" matInput placeholder="PhoneNumber" formControlName="PhoneNumber">
+                        <mat-error *ngIf="ContactUsForm.controls.PhoneNumber.hasError('required')">Please Enter PhoneNumber.</mat-error>
+                        <mat-error *ngIf="ContactUsForm.controls.PhoneNumber.hasError('minLength')">Length Should Be At More 10</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <button type="submit" mat-raised-button color="primary"  [disabled]="MyForm.form.invalid">Send</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Message</mat-label>
+                        <textarea matInput placeholder="Message" formControlName="Message"></textarea>
+                        <mat-error *ngIf="ContactUsForm.controls.Message.hasError('required')">Please Enter Message.</mat-error>
+                      </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+

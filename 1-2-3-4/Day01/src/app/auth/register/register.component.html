@@ -25,9 +25,6 @@
             <mat-label>Enter your PhoneNumber</mat-label>
             <input matInput placeholder="PhoneNumber" formControlName="PhoneNumber">
         </mat-form-field>
-
-        <!-- [disabled] = '!registerForm.FullName.valid || !registerForm.Email.valid
-        || !registerForm.Password.valid || !registerForm.Address.valid || !registerForm.PhoneNumber.valid' -->
         <button mat-raised-button color="primary" type="submit" [disabled] = '!registerForm.controls.valid'>Submit</button>
     </div>
 </form>

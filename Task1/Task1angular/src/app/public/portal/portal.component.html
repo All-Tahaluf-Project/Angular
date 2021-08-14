@@ -1,0 +1,74 @@
+
+<!-- <div style="background: url(https://i.postimg.cc/3N7wnb75/background.jpg)" class="jumbotron bg-cover text-white">
+    <div class="container py-5 text-center">
+        <h1 class="display-4 font-weight-bold">Bootstrap static header</h1>
+        <p class="font-italic mb-0">Using simple jumbotron-style component, create a nice Bootstrap 4 header with a background image.</p>
+        <p class="font-italic">Snippe by
+            <a href="https://bootstrapious.com" class="text-white">
+                <u>Bootstrapious</u>
+            </a>
+        </p>
+        <a href="#" role="button" class="btn btn-primary px-5">See All Features</a>
+    </div>
+</div>
+
+<div class="container py-5">
+    <h2 class="h3 font-weight-bold">Some demo content</h2>
+    <div class="row">
+        <div class="col-lg-10 mb-4">
+            <p class="font-italic text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
+            <p class="font-italic text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
+        </div>
+        <div class="col-lg-8">
+            <p class="font-italic text-muted">Lorem ipsum dolor sit amet, consectetur <strong class="font-weight-bold text-dark">adipisicing elit, sed </strong>do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in <strong class="font-weight-bold text-dark">reprehenderit in voluptate </strong>velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+</div> -->
+
+<!-- <nav class="navbar navbar-dark sticky-top flex-md-nowrap p-0">
+	<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
+	<input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+	<ul class="navbar-nav px-3">
+		<li class="nav-item text-nowrap">
+			<a class="nav-link" href="#">Sign out</a>
+		</li>
+	</ul>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="#" class="navbar-brand">
+        <img src="../../../assets/Image/Icons/diagnosis.png" width="45" alt="" class="d-inline-block align-middle mr-2">
+        <span class="text-uppercase font-weight-bold">Pharmacy</span>
+      </a>
+  
+      <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+  
+      <div id="navbarSupportedContent" class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item active"><a routerLink = '../Authentication/Portal/Login' class="nav-link">LogIn <span class="sr-only">(current)</span></a></li>
+          <li class="nav-item active"><a routerLink = '../Authentication/Portal/Register' class="nav-link">Register <span class="sr-only">(current)</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  
+	<div class="row">
+		<main role="main" class="col-12">
+
+            <app-home></app-home>
+
+            <app-aboutus></app-aboutus>
+
+            <app-contactus></app-contactus>
+     	</main>
+	</div>
+
+    <ngx-spinner bdColor = "rgba(0,138,255,0.49)" size = "large" color = "#0046ff" type = "ball-square-spin" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+
+
+
+<!-- <router-outlet></router-outlet> -->
+

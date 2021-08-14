@@ -1,0 +1,26 @@
+<div class="login" style="background:#475d62 url(../../../assets/Image/BackGround/{{ImageURL[CountForImage]}});background-size:  cover;">
+    <form method="post" [formGroup]='LogInForm' (submit)='submit()' #MyForm="ngForm">
+        <h2 class="sr-only">Login Form</h2>
+        <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+        <div class="form-group">
+            <mat-form-field>
+                <mat-label>Enter your Name</mat-label>
+                <input matInput placeholder="UserName" formControlName="UserName">
+                <mat-error *ngIf="LogInForm.controls.UserName.hasError('required')">Please Enter UserName.</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field>
+                <mat-label>Enter your Password</mat-label>
+                <input type="password" matInput placeholder="Password" formControlName="Password">
+                <mat-error *ngIf="LogInForm.controls.Password.hasError('required')">Please Enter Password.</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-group"><button class="btn btn-primary btn-block" type="submit" [disabled]="MyForm.form.invalid">Log In</button></div>
+        <a routerLink='../Register' class="forgot">Register</a>
+        <mat-checkbox class="forgot" formControlName="RememberMe">Remember me</mat-checkbox>
+    </form>
+    
+</div>
+
+<ngx-spinner bdColor = "rgba(0,138,255,0.49)" size = "large" color = "#0046ff" type = "ball-elastic-dots" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
