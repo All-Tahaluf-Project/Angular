@@ -1,0 +1,7 @@
+
+
+<div *ngFor='let V of Service.MyList'>
+    {{V.id}} || {{V.name}} || {{V.description}} 
+    <button (click) = 'Edit(V)'>Edit</button>
+    <button (click) = 'Delete(V.id)'>Delete</button>
+</div>

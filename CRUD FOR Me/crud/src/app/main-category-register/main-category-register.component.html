@@ -1,0 +1,22 @@
+
+
+
+<form [formGroup]='Service.MyForm' (submit)='submit()'>
+    <div class="example-container">
+        <mat-form-field>
+            <input matInput placeholder="Name" formControlName="Name">
+            <mat-error *ngIf="Service.MyForm.controls.Name.hasError('required')">Please Enter Name.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Description" formControlName="Description">
+            <mat-error *ngIf="Service.MyForm.controls.Description.hasError('required')">Please Enter Description.</mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" [disabled] = '!Service.MyForm.valid'>Submit</button>
+    </div>
+</form>
+
+<button (click) = 'Clear()'>Clear</button>
+
+
+
