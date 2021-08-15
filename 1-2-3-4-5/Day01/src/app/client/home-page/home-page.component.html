@@ -1,0 +1,36 @@
+<p>home-page works!</p>
+
+<a routerLink='Register'>Register</a>
+<a routerLink='Login'>Login</a>
+
+
+
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>My App</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar-row>
+
+    <mat-toolbar-row>
+      <span>Second Line</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <div class="container" *ngFor='let V of Data'>
+    <app-portalcard type='{{V.type}}' subText='{{V.subText}}' description = '{{V.description}}'
+    (GoProfile) = 'GoToProfile()'></app-portalcard>
+  </div>
+
+
+   <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "ball-triangle-path" [fullScreen] = "true"><p style="color: white" > Please Wait... </p></ngx-spinner>
+
