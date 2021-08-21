@@ -1,0 +1,113 @@
+<!-- <div class=" row" id="left">
+    <div class="col-md-11" id="col11">
+
+      <table class="table" >
+
+
+        <thead class="thead-light">
+         
+          <tr>
+            <th scope="col">Name</th>
+          </tr>
+        </thead>
+        <tbody *ngFor ="let Teacher of service.TeacherList">
+                 <td>{{Teacher.name}}</td>
+        </tbody>
+        </table>
+    </div>
+    <div class="col-md-1"></div>
+
+  </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title m-b-0">Teachers Table</h5>
+                </div>
+                <hr>
+                <div class="card-body text-center">
+                    <div class="row">
+                        <div class="col-5">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Enter Name</mat-label>
+                                <input matInput placeholder="Name" [formControl]="SearchName" required>
+                                <mat-error *ngIf="SearchName.hasError('required')">Name Is Required</mat-error>
+                              </mat-form-field>
+                              <button mat-button color="accent" (click) ='SearchByName()' [disabled]="!SearchName.valid">Search</button>
+                        </div>
+                        <div class="col-5">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Select Category</mat-label>
+                                <mat-select [formControl]="SearchCategory" >
+                                  <mat-option *ngFor="let C of service.CategoryList" value="{{C.id}}">{{C.name}}</mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="SearchCategory.hasError('required')">Category Is Required</mat-error>
+                              </mat-form-field>
+                              <button mat-button color="accent" (click) ='SearchByCategoryId()' [disabled]="!SearchCategory.valid">Search</button>
+                        </div>
+                        <div class="col-2">
+                            <button type="button" (click) = "Create()" class="btn btn-success btn-sm">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Details</th>
+                                <th scope="col">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody class="customtable" *ngFor ="let Teacher of service.TeacherList">
+                            <tr>
+                                <td>{{Teacher.name}}</td>
+                            <td>
+                                <button id="btn" (click) = "Update(Teacher)" class="green fluid ui button">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button id="btn" (click) = "Delete(Teacher.id)" class="red fluid ui button">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </td>
+                                <td>
+                                    <button id="btn" (click) = "Details(Teacher.id)" class="blue fluid ui button">
+                                        <i class="fas fa-info-circle"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,21 @@
+
+<form method="POST" [formGroup] = 'service.FormRegisterTeacher' (submit) = 'Submit()'>
+    <mat-form-field>
+        <mat-label>Enter your Name</mat-label>
+        <input matInput placeholder="Name" formControlName="Name">
+        <mat-error *ngIf="service.FormRegisterTeacher.controls.Name.hasError('required')">Please Enter Name.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Select Category</mat-label>
+        <mat-select formControlName="CategoryId" >
+          <mat-option *ngFor="let C of service.CategoryList" value="{{C.id}}">{{C.name}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="service.FormRegisterTeacher.controls.CategoryId.hasError('required')">Category Is Required</mat-error>
+      </mat-form-field>
+      <hr>
+
+    <button mat-raised-button color="primary" type="submit" [disabled] = '!service.FormRegisterTeacher.valid'>Submit</button>
+</form>
+
+
+<ngx-spinner bdColor = "rgba(202,213,238,0.8)" size = "large" color = "#0500ff" type = "ball-grid-beat" [fullScreen] = "true"><p style="color: white" > Please Wait ... </p></ngx-spinner>
