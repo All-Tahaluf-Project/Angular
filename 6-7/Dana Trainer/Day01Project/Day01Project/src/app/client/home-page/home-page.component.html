@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Portal APP</span>
+    </mat-toolbar-row>
+</mat-toolbar>  
+<div class=container>
+  <!-- <button (click)="create()">Create</button> -->
+  <button (click)="createCourse()">Create New Coures</button>
+    <div class="cards">
+  
+        <app-portal-card *ngFor ="let card of homeService.data " [courseId]="card.courseId"  [courseName]="card.courseName" 
+        [coursePrice]="card.coursePrice"  (goProfile)="goToProfile()"></app-portal-card>
+
+  </div>
+
+  <button (click)="Admin()">Admin</button>
+
+<button (click)="logout()">Logout</button>
+</div>

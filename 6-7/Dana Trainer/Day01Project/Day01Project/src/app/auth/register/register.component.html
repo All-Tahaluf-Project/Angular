@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="loginCard">
+<form [formGroup]="formRegister" (submit)="submit()">
+  <mat-form-field class="example-full-width">
+    <mat-label>Enter Full Name </mat-label>
+    <input matInput  formControlName="fullName">
+    <mat-error *ngIf="formRegister.controls.fullName.hasError('required') ">
+      Please Enter your name
+    </mat-error>
+  </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="pat@example.com" formControlName="email">
+        <mat-error *ngIf="formRegister.controls.email.hasError('required') && !formRegister.controls.email.hasError('email')">
+          Please Enter your email
+        </mat-error>
+        <mat-error *ngIf="formRegister.controls.email.hasError('email') ">
+          Please Enter valid email
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Enter your password</mat-label>
+        <input matInput  formControlName="password">
+        <mat-error *ngIf="formRegister.controls.password.hasError('required') && !formRegister.controls.password.hasError('minlength')">
+          Please Enter your password
+        </mat-error>
+        <mat-error *ngIf="formRegister.controls.password.hasError('minlength') ">
+          Please Enter strong password
+        </mat-error>
+      </mat-form-field>
+      
+      <mat-form-field class="example-full-width">
+        <mat-label>Enter your Address</mat-label>
+        <input matInput  formControlName="address">
+      
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Enter your Phone Number</mat-label>
+        <input matInput  formControlName="phoneNumber">
+      
+      </mat-form-field>
+
+      <button type="submit" [disabled]="!formRegister.valid" 
+      mat-button color="info"  style="flex:1;width:100%;margin-top:50px;">
+      Register             
+     </button>
+
+</form>
+</div>
+</div>

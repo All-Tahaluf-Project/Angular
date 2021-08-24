@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="loginCard">
+    <div class="form">
+      <div class="example-container">
+          <mat-form-field class="example-full-width">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" [formControl]="auth.email">
+            <mat-error *ngIf="auth.email.hasError('required') && !auth.email.hasError('email')">
+              Please Enter your email
+            </mat-error>
+            <mat-error *ngIf="auth.email.hasError('email') ">
+              Please Enter valid email
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field  class="example-full-width">
+              <mat-label>Enter your password</mat-label>
+              <input type="password" matInput placeholder="pat@example.com" [formControl]="auth.password">
+              <mat-error *ngIf="auth.password.hasError('required') && !auth.password.hasError('minlength')">
+                Please Enter your password
+              </mat-error>
+              <mat-error *ngIf="auth.password.hasError('minlength') ">
+                min length must be 8 char 
+              </mat-error>
+            </mat-form-field>
+            <button type="submit" [disabled]="!auth.email.valid || !auth.password.valid"
+             mat-button color="info" (click)="submit()" style="flex:1;width:100%;margin-top:50px;">
+             Login             
+            </button>
+           <p (click)="goToRegister()" style="cursor: pointer; text-align: center;margin-top:30px;" >Create New Account </p>
+           <!-- <p routerLink="register">Create New Account </p> -->
+        </div>
+        
+  </div>
+ <h2>{{home.message}}</h2>
+</div>
+</div>

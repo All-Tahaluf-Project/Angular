@@ -1,0 +1,16 @@
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: rosybrown;
+    padding:15px;
+}
+div{
+    display: flex;
+    flex-direction: row;
+    
+}
+span{
+    margin-left: 15px;
+    
+}

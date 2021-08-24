@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Create Course</h2>
+    <mat-dialog-content class="mat-typograghy">
+<form [formGroup]='formGroup'>
+        <mat-form-field class="example-full-width">
+          <mat-label>Course Name</mat-label>
+          <input matInput formControlName="CourseName" >
+          <mat-error *ngIf="formGroup.controls.CourseName.hasError('required')">
+            Course Name is Required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Course Price</mat-label>
+            <input matInput formControlName="CoursePrice" >
+            <mat-error *ngIf="formGroup.controls.CoursePrice.hasError('required')" >
+                Course Price is Required
+            </mat-error> 
+        </mat-form-field>
+</form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button  mat-button mat-dialog-close>Cancel</button>
+    <button [disabled]="!formGroup.valid" [mat-dialog-close]="true" mat-button color="info" (click)="saveItem()">Save</button>
+
+</mat-dialog-actions>
+
+
